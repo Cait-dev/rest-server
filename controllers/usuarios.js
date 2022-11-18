@@ -65,9 +65,6 @@ const usuariosPatch = (req, res=response) =>  {
 const usuariosDelete = async(req, res=response) =>  {
     const {id} = req.params;
 
-    //Borrar fisicamente usuario
-    //const usuario = await Usuario.findByIdAndDelete(id)
-
     //Desactivar el usuario para no perder su informacion
     const usuario = await Usuario.findByIdAndUpdate(id, {estado: false})
     res.json(usuario);
