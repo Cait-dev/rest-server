@@ -29,10 +29,6 @@
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
-
-        var url = (window.location.hostname.includes('localhost')) ? 
-        'http://localhost:8090/api/auth/google' :
-        'http://https://restserver-node-rs.herokuapp.com'
                     
 
         function handleCredentialResponse(response) {
@@ -40,7 +36,7 @@
 
             const body = { id_token: response.credential};
 
-            fetch('http://localhost:8090/api/auth/google', {
+            fetch('https://restserver-node-rs.herokuapp.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json'
