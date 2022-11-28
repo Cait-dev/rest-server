@@ -25,10 +25,16 @@
  <button id="google_signout">
     Signout
  </button>
-
+    
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
+
+        var url = (window.location.hostname.includes('localhost')) ? 
+        'http://localhost:8090/api/auth/google' :
+        'http://https://restserver-node-rs.herokuapp.com'
+                    
+
         function handleCredentialResponse(response) {
             //console.log('Id token', response.credential);
 
